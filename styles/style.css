@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(rgb(0, 204, 255), rgb(166, 190, 255));
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 1vh;
+  margin: 1vh;
+}
+
+.cell {
+  box-sizing: border-box;
+  max-height: 25vh;
+  height: 25vw;
+  max-width: 25vh;
+  width: 25vw;
+  background: linear-gradient(rgb(255,255,255), rgb(202, 202, 202));
+  border-radius: 2vh;
+  border: 2px solid rgb(177, 177, 177);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status {
+  position: relative;
+  box-sizing: border-box;
+  height: 10vh;
+  max-width: calc(25vh*3 + 2vh);
+  width: calc(25vw*3 + 2vw);
+  background: linear-gradient(rgb(255, 255, 255), rgb(25, 171, 255));
+  border-radius: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.winner {
+  background: linear-gradient(rgb(255, 255, 255), rgb(0, 190, 16));
+}
+
+.draw {
+  background: linear-gradient(rgb(255, 255, 255), rgb(212, 198, 0));
+}
+
+.status p {
+  position: absolute;
+  left: 15%;
+  font-weight: 400;
+  font-size: 4vh;
+  color: white;
+  text-shadow: 0px 1px 5px rgb(141, 141, 141);
+}
+
+.button {
+  position: absolute;
+  right: 7%;
+  width: fit-content;
+  height: fit-content;
+  padding: 3%;
+  background-color: transparent;
+  border-radius: 2vh;
+  font-size: 2.5vh;
+  outline: 2px solid rgb(255, 255, 255);
+  color: white;
+  text-shadow: 0px 1px 2px rgb(141, 141, 141);
+  transition: 0.5s;
+}
+
+.button:hover {
+  background-color: rgb(25, 171, 255);
+  outline: 2px solid rgb(122, 122, 122);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.ball::after {
+  content: "\26BD";
+  font-size: 15vh;
+}
+
+.cross::after {
+  content: "\274C";
+  font-size: 15vh;
+}
+
+@media (max-width: 960px) {
+
+  .status {
+    height: 10vw;
+    border-radius: 2vw;
+  }
+
+  .status p {
+    font-size: 4vw;
+    text-shadow: 0px 1px 5px rgb(141, 141, 141);
+  }
+  
+  .button {
+    border-radius: 2vw;
+    font-size: 2.5vw;
+  }
+
+  .ball::after {
+    font-size: 15vw;
+  }
+
+  .cross::after {
+    font-size: 15vw;
+  }
+
+  .cell{
+    border-radius: 2vw;
+  }
+
+}
